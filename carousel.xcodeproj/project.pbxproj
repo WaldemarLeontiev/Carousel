@@ -12,9 +12,14 @@
 		6BFFA44D20E120B500549105 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BFFA44B20E120B500549105 /* Main.storyboard */; };
 		6BFFA44F20E120B800549105 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BFFA44E20E120B800549105 /* Assets.xcassets */; };
 		6BFFA45220E120B800549105 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BFFA45020E120B800549105 /* LaunchScreen.storyboard */; };
+		6BFFA45B20E1213F00549105 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFFA45A20E1213F00549105 /* CarouselViewController.swift */; };
+		6BFFA45F20E1265400549105 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFFA45E20E1265400549105 /* UIView+.swift */; };
+		6BFFA46120E1308000549105 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFFA46020E1308000549105 /* UIViewController+.swift */; };
+		FA0499589048D64143D52EB6 /* Pods_carousel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8737C22E3F8EE8D61C9120 /* Pods_carousel.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E61E171B66DE92A38950F7D /* Pods-carousel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carousel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-carousel/Pods-carousel.debug.xcconfig"; sourceTree = "<group>"; };
 		6BFFA44420E120B500549105 /* carousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BFFA44720E120B500549105 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BFFA44920E120B500549105 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,11 @@
 		6BFFA44E20E120B800549105 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BFFA45120E120B800549105 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BFFA45320E120B800549105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BFFA45A20E1213F00549105 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		6BFFA45E20E1265400549105 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		6BFFA46020E1308000549105 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		81108035936FA3B61E38477C /* Pods-carousel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carousel.release.xcconfig"; path = "Pods/Target Support Files/Pods-carousel/Pods-carousel.release.xcconfig"; sourceTree = "<group>"; };
+		FA8737C22E3F8EE8D61C9120 /* Pods_carousel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carousel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0499589048D64143D52EB6 /* Pods_carousel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29E197BD6F5B50A37895A4F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E61E171B66DE92A38950F7D /* Pods-carousel.debug.xcconfig */,
+				81108035936FA3B61E38477C /* Pods-carousel.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4D0E8175BEF0D7F9E515CD17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA8737C22E3F8EE8D61C9120 /* Pods_carousel.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6BFFA43B20E120B500549105 = {
 			isa = PBXGroup;
 			children = (
 				6BFFA44620E120B500549105 /* carousel */,
 				6BFFA44520E120B500549105 /* Products */,
+				29E197BD6F5B50A37895A4F8 /* Pods */,
+				4D0E8175BEF0D7F9E515CD17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +84,8 @@
 		6BFFA44620E120B500549105 /* carousel */ = {
 			isa = PBXGroup;
 			children = (
+				6BFFA45D20E1262F00549105 /* Additions */,
+				6BFFA45920E1212E00549105 /* Carousel */,
 				6BFFA44720E120B500549105 /* AppDelegate.swift */,
 				6BFFA44920E120B500549105 /* ViewController.swift */,
 				6BFFA44B20E120B500549105 /* Main.storyboard */,
@@ -64,6 +96,23 @@
 			path = carousel;
 			sourceTree = "<group>";
 		};
+		6BFFA45920E1212E00549105 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				6BFFA45A20E1213F00549105 /* CarouselViewController.swift */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		6BFFA45D20E1262F00549105 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				6BFFA45E20E1265400549105 /* UIView+.swift */,
+				6BFFA46020E1308000549105 /* UIViewController+.swift */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BFFA45620E120B800549105 /* Build configuration list for PBXNativeTarget "carousel" */;
 			buildPhases = (
+				1480E952CA07B56DD1A2DEA4 /* [CP] Check Pods Manifest.lock */,
 				6BFFA44020E120B500549105 /* Sources */,
 				6BFFA44120E120B500549105 /* Frameworks */,
 				6BFFA44220E120B500549105 /* Resources */,
+				8A46CF905D62FD45773DABA7 /* [CP] Embed Pods Frameworks */,
+				6BFFA45C20E125C200549105 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -130,12 +182,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1480E952CA07B56DD1A2DEA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-carousel-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BFFA45C20E125C200549105 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint";
+		};
+		8A46CF905D62FD45773DABA7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-carousel/Pods-carousel-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-carousel/Pods-carousel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6BFFA44020E120B500549105 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BFFA45F20E1265400549105 /* UIView+.swift in Sources */,
 				6BFFA44A20E120B500549105 /* ViewController.swift in Sources */,
+				6BFFA46120E1308000549105 /* UIViewController+.swift in Sources */,
+				6BFFA45B20E1213F00549105 /* CarouselViewController.swift in Sources */,
 				6BFFA44820E120B500549105 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +386,7 @@
 		};
 		6BFFA45720E120B800549105 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E61E171B66DE92A38950F7D /* Pods-carousel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +405,7 @@
 		};
 		6BFFA45820E120B800549105 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81108035936FA3B61E38477C /* Pods-carousel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
