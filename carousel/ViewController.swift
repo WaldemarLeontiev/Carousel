@@ -11,11 +11,13 @@ import UIKit
 class ViewController: UIViewController {
     
     lazy var carouselViewController = CarouselViewController(delegate: self)
+    
+    @IBOutlet weak var indexLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.add(self.carouselViewController)
-        carouselViewController.view.makeSuperviewInsetConstraints(top: 64, bottom: 64, left: 0, right: 0)
+        carouselViewController.view.makeSuperviewInsetConstraints(top: 64, bottom: 128, left: 0, right: 0)
     }
 }
 
@@ -54,5 +56,7 @@ extension ViewController: CarouselViewControllerDelegate {
         }
         return view
     }
-    
+    func carouselViewDidScroll(toIndex index: Int) {
+        self.indexLabel.text = "\(index)"
+    }
 }

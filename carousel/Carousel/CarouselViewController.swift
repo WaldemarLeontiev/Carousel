@@ -14,6 +14,7 @@ protocol CarouselViewControllerDelegate: class {
     var carouselViewDecreaseRatio: CGFloat {get}
     var carouselViewsCount: Int {get}
     func getCarouselView(at index: Int) -> UIView
+    func carouselViewDidScroll(toIndex index: Int)
 }
 
 class CarouselViewController: UIViewController {
@@ -26,6 +27,7 @@ class CarouselViewController: UIViewController {
     // MARK: - Variables
     private(set) lazy var allViews = self.getAllViews()
     private var sideInset: CGFloat = 0
+    private var currentIndex = 0
     
     // MARK: - Init
     init(delegate: CarouselViewControllerDelegate) {
@@ -67,6 +69,21 @@ extension CarouselViewController {
         let currentX = self.scrollView.contentOffset.x + self.sideInset
         let cellDistance = cellWidth * CGFloat(index)
         return (cellDistance - currentX) / cellWidth
+    }
+    private var currentScrollIndex: Int {
+        guard let delegate = self.delegate else {
+            return 0
+        }
+        let cellWidth = delegate.carouselViewWidth + self.correctedSpacing
+        let currentX = self.scrollView.contentOffset.x + self.sideInset
+        let index = Int(round(currentX / cellWidth))
+        if index < 0 {
+            return 0
+        } else if index > (self.allViews.count - 1) {
+            return self.allViews.count - 1
+        } else {
+            return index
+        }
     }
     private var correctedSpacing: CGFloat {
         guard let delegate = self.delegate else {
@@ -142,6 +159,10 @@ extension CarouselViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let delegate = self.delegate else {
             return
+        }
+        if self.currentScrollIndex != self.currentIndex {
+            self.currentIndex = self.currentScrollIndex
+            delegate.carouselViewDidScroll(toIndex: self.currentIndex)
         }
         for (index, view) in self.allViews.enumerated() {
             let relativeDistance = self.getCurrentDistance(for: index)
